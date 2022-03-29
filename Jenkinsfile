@@ -1,13 +1,15 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs '17.7.2'
-    }
+//    tools {
+//        nodejs '17.7.2'
+//    }
 
-    options {
+/*    options {
         timeout(time: 2, unit: 'MINUTES')
     }
+*/
+    echo 'Before Pipeline..'
 
     stages {
         stage('Build') {
