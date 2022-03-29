@@ -9,8 +9,6 @@ pipeline {
         timeout(time: 2, unit: 'MINUTES')
     }
 */
-    echo 'Before Pipeline..'
-
     stages {
         stage('Build') {
             steps {
