@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Luis Arrieta Cohen..'
             }
         }
         stage('Test') {
