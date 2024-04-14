@@ -19,7 +19,7 @@ pipeline {
                     // checkout([$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[url: 'https://github.com/larrietacohen/hello-mama.git']]])
                     sh('pwd')
                     sh('ls -la')
-                    echo ${ENV}
+                    echo "${ENV}"
                 }
             }
         }
