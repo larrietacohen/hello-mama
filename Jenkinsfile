@@ -4,7 +4,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build..'
-                echo env.TAG_NAME
                 if(env.TAG_NAME != null){
                     echo "SE HA EJECUTADO EL TAG NAME PERO VEREMOS LO SIGUIENTE"
                 }
