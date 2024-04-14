@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    ENV = 0
+    def ENV = 0
     stages {
         stage('Build') {
             steps {
