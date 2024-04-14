@@ -20,6 +20,8 @@ pipeline {
                     sh('pwd')
                     sh('ls -la')
                     echo "${ENV}"
+                    input message: 'Do you want to approve the deployment?', ok: 'Yes'
+                    input "Deploy to prod ?"
                 }
             }
         }
