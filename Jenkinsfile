@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    ENV = 0
     stages {
         stage('Build') {
             steps {
@@ -8,6 +9,7 @@ pipeline {
                     echo env.TAG_NAME
                     if(env.TAG_NAME != null){
                         echo "SE HA EJECUTADO EL TAG NAME PERO VEREMOS LO SIGUIENTE"
+                        ENV = 10
                     }
                     if(env.BRANCH_NAME == 'main'){
                         echo "SERA QUE SE EJECUTARA ?"
@@ -16,6 +18,7 @@ pipeline {
                     // checkout([$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[url: 'https://github.com/larrietacohen/hello-mama.git']]])
                     sh('pwd')
                     sh('ls -la')
+                    echo ${ENV}
                 }
             }
         }
