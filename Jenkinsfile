@@ -16,7 +16,7 @@ pipeline {
                     if(env.TAG_NAME != null){
                         ACCOUNT_ID = "1010"
                         CLOUDFRONT_ID = "1010"
-                        deployHigh("10", "20")
+                        deployHigh("${ENV}", "${env.TAG_NAME}")
                     }
                     if(env.BRANCH_NAME == 'main'){
                         echo "SERA QUE SE EJECUTARA ?"
