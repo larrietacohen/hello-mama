@@ -1,3 +1,8 @@
+def deployHigh(ENV, TAG){
+    echo "${ENV}"
+    echo "${TAG}"
+}
+
 def ENV = 0
 
 pipeline {
@@ -9,8 +14,9 @@ pipeline {
                     echo 'Build..'
                     echo env.TAG_NAME
                     if(env.TAG_NAME != null){
-                        echo "SE HA EJECUTADO EL TAG NAME PERO VEREMOS LO SIGUIENTE"
-                        ENV = 10
+                        ACCOUNT_ID = "1010"
+                        CLOUDFRONT_ID = "1010"
+                        deployHigh("${ENV}", "${env.TAG_NAME}")
                     }
                     if(env.BRANCH_NAME == 'main'){
                         echo "SERA QUE SE EJECUTARA ?"
