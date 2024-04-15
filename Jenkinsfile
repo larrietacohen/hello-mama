@@ -1,9 +1,9 @@
-def deployHigh(ENV, TAG){
+void deployHigh(def ENV, def TAG){
     echo "${ENV}"
     echo "${TAG}"
 }
 
-def ENV = 0
+def ENV = '10'
 
 pipeline {
     agent any
@@ -16,7 +16,7 @@ pipeline {
                     if(env.TAG_NAME != null){
                         ACCOUNT_ID = "1010"
                         CLOUDFRONT_ID = "1010"
-                        deployHigh("${ENV}", "${env.TAG_NAME}")
+                        deployHigh("10", "20")
                     }
                     if(env.BRANCH_NAME == 'main'){
                         echo "SERA QUE SE EJECUTARA ?"
@@ -26,21 +26,6 @@ pipeline {
                     sh('pwd')
                     sh('ls -la')
                     echo "${ENV}"
-
-                    def userInput = input(
-                        id: 'approval',
-                        message: '¿Aprobar la ejecución?',
-                        parameters: [
-                            [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Aprobar ejecución']
-                        ]
-                    )
-                    
-                    // Verifica si el usuario aprobó la ejecución
-                    if (userInput) {
-                        echo 'La ejecución ha sido aprobada.'
-                    } else {
-                        error 'La ejecución ha sido rechazada.'
-                    }
                 }
             }
         }
