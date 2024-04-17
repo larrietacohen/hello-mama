@@ -1,6 +1,12 @@
 void deployHigh(def ENV, def TAG){
     echo "${ENV}"
     echo "${TAG}"
+    buildImage()
+}
+
+def buildImage(){
+    sh 'df -h'
+    sh('docker run hello-world')
 }
 
 def ENV = '10'
