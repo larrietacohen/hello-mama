@@ -6,6 +6,7 @@ void deployHigh(def ENV, def TAG){
 
 def buildImage(){
     sh 'df -h'
+    input "Deploy to prod?"
     sh('docker run hello-world')
 }
 
