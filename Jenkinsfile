@@ -2,7 +2,7 @@ void deployHigh(def ENV, def TAG){
     echo "${ENV}"
     echo "${TAG}"
     buildImage()
-}
+} 
 
 def buildImage(){
     sh 'df -h'
