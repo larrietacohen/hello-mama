@@ -35,7 +35,7 @@ pipeline {
                     echo "${ENV}"
                 }
             }
-        }
+        } 
         stage('Test') {
             steps {
                 echo 'Testing..'
