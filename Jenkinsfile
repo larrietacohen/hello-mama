@@ -13,13 +13,14 @@ def buildImage(){
 def ENV = '10'
 
 pipeline {
-    agent any
+    agent { label '!principal'}
     stages {
         stage('Build') {
             steps {
                 script {                
                     echo 'Build..'
                     echo env.TAG_NAME
+                    docker build -t hello-mama .
                     if(env.TAG_NAME != null){
                         ACCOUNT_ID = "1010"
                         CLOUDFRONT_ID = "1010"
