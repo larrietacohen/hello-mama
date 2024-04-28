@@ -20,7 +20,7 @@ pipeline {
                 script {                
                     echo 'Build..'
                     echo env.TAG_NAME
-                    docker build -t hello-mama .
+                    sh('docker build -t hello-mama .')
                     if(env.TAG_NAME != null){
                         ACCOUNT_ID = "1010"
                         CLOUDFRONT_ID = "1010"
