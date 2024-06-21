@@ -15,7 +15,7 @@ def buildImage(){
 def ENV = '10'
 
 pipeline {
-    agent { label any }
+    agent any
     stages {
         stage('Build') {
             steps {
