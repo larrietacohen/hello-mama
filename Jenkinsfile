@@ -1,3 +1,5 @@
+@Library('devops-utils-monokera')
+
 void deployHigh(def ENV, def TAG){
     echo "${ENV}"
     echo "${TAG}"
@@ -13,7 +15,7 @@ def buildImage(){
 def ENV = '10'
 
 pipeline {
-    agent { label '!principal'}
+    agent { label any }
     stages {
         stage('Build') {
             steps {
