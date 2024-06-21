@@ -21,6 +21,7 @@ pipeline {
             steps {
                 script {                
                     echo 'Build..'
+                    sh('ls -la')
                     echo env.TAG_NAME
                     sh('docker build -t hello-mama .')
                     if(env.TAG_NAME != null){
